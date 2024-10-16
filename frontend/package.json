@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "build-frontend": "docker build -t my-frontend ./frontend",
+    "build-frontend": "docker build -t my-frontend ../frontend",
     "build-backend": "docker build -t my-backend ./backend",
     "build-all": "npm run build-frontend && npm run build-backend",
     "run-frontend": "docker run -p 80:80 my-frontend",
