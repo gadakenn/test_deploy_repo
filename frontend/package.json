@@ -10,7 +10,10 @@
     "preview": "vite preview",
     "build-frontend": "docker build -t my-frontend ./frontend",
     "build-backend": "docker build -t my-backend ./backend",
-    "build-all": "npm run build-frontend && npm run build-backend"
+    "build-all": "npm run build-frontend && npm run build-backend",
+    "run-frontend": "docker run -p 80:80 my-frontend",
+    "run-backend": "docker run -p 8000:8000 my-backend",
+    "run-all": "npm run run-frontend && npm run run-backend"
   },
   "dependencies": {
     "axios": "^1.7.2",
