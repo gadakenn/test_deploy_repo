@@ -1,14 +1,13 @@
-# Переменные для путей к Dockerfile
-FRONTEND_PATH=./frontend
-BACKEND_PATH=./backend
-
-# Команда для сборки фронтенда
-build-frontend:
-	docker build -t my-frontend $(FRONTEND_PATH)
-
-# Команда для сборки бэкенда
-build-backend:
-	docker build -t my-backend $(BACKEND_PATH)
-
-# Команда для запуска всего проекта (фронтенд и бэкенд)
+# Команда для сборки фронтенда и бэкенда
 build-all: build-frontend build-backend
+
+# Команда для запуска фронтенда
+run-frontend:
+	docker run -p 80:80 my-frontend
+
+# Команда для запуска бэкенда
+run-backend:
+	docker run -p 8000:8000 my-backend
+
+# Команда для запуска фронтенда и бэкенда вместе
+run-all: run-frontend run-backend
